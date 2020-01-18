@@ -16,9 +16,9 @@
 
 *  [Setup](#setup)
 
-*  [Server Documentation](#server)
-
-*  [Web Client](#webclient)
+*  [Documentation](#documentation)
+	* [Server Documentation](#server)
+	*  [Web Client](#webclient)
 
   
 
@@ -105,9 +105,9 @@ $ docker-compose build
 $ docker-compose up -d
 ```
  
+## Documentation
 
 ## Server
-
 
 ### Tasks API
 
