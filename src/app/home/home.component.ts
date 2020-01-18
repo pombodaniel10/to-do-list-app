@@ -68,8 +68,7 @@ export class HomeComponent implements OnInit {
       this.user = {name:this.name};
       this.api.addUser(this.user)
         .subscribe(res => {
-          this.router.navigateByUrl('', {skipLocationChange: true})
-            .then(() => this.router.navigate(['/']));
+          location.reload();
         }, err => {
           console.log(err);
         });

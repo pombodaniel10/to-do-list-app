@@ -1,10 +1,6 @@
 ## Tasks Manager
 
-  
-
 ![Main page](./images/main-page.png)
-
-  
 
 ## Table of contents
 
@@ -17,7 +13,7 @@
 *  [Setup](#setup)
 
 *  [Documentation](#documentation)
-	* [Server Documentation](#server)
+	* [Server](#server)
 	*  [Web Client](#webclient)
 
   
@@ -26,22 +22,12 @@
 
 Tasks Manager is a WebApp to create,edit and delete tasks, you can set different task status and assign task to a user. This project was developed using the MEAN stack.
 
-  
-
 ## Features
 
-
-* Create Task
+* Create/Edit Task
 
 ![Add Task](./images/add-task.png)
-
-* Edit Task
-
 ![Edit Task](./images/edit-task.png)
-
-* Tasks List
-
-![Tasks List](./images/task-list.png)
 
 * Filter a Task of the list
 
@@ -52,6 +38,10 @@ Tasks Manager is a WebApp to create,edit and delete tasks, you can set different
 * Assign a Task to a User
 
 * Remove a User from a Task
+
+* Tasks List
+
+![Tasks List](./images/task-list.png)
 
 * User List
 
@@ -92,6 +82,8 @@ $ npm run start
 ```
 
 ### Docker Install 
+
+Modify the .env file to ```MONGO_HOST=mongodb://mongo:27017/tasks-manager```
 
 ```
 $ git clone https://github.com/pombodaniel10/tasks-manager
