@@ -31,7 +31,6 @@ export class AddTaskComponent implements OnInit {
     await this.api.getAllUsers()
    .subscribe(res => {
       this.users = res;
-      console.log(this.users);
     }, err => {
       console.log(err);
       });

@@ -79,7 +79,7 @@ $ npm run start
 
 ### Docker Install 
 
-Modify the 'MONGO HOST' into the .env file to ```MONGO_HOST=mongodb://mongo:27017/tasks-manager```
+Modify the 'MONGO HOST' into the .env file to ```MONGO_HOST=mongodb://mongodb:27017/tasks-manager```
 
 ```
 $ git clone https://github.com/pombodaniel10/tasks-manager
