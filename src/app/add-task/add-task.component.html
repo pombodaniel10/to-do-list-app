@@ -21,7 +21,8 @@
                         <option *ngFor="let user of users">{{user.name}}</option>
                     </select>
                     </div>
-                    <button [disabled]="!addForm.valid" type="submit" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-danger">Cancel</button>
+                    <button [disabled]="!addForm.valid" type="submit" style="position: relative; right: -10px;" class="btn btn-primary">Submit</button>
                 </fieldset>
             </form>
         </div>
