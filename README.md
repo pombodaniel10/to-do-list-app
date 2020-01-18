@@ -75,6 +75,8 @@ Project is created with:
 
 ## Setup
 
+### NPM Install 
+
 To run this project, install it locally using npm:
 
 ```
@@ -87,6 +89,20 @@ $ cp .env.example .env
 $ npm install
 
 $ npm run start
+```
+
+### Docker Install 
+
+```
+$ git clone https://github.com/pombodaniel10/tasks-manager
+
+$ cd tasks-manager
+
+$ cp .env.example .env
+
+$ docker-compose build
+
+$ docker-compose up -d
 ```
  
 

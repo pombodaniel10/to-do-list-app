@@ -1,0 +1,21 @@
+version: '3' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  platform: #name of the first service
+    build: . # specify the directory of the Dockerfile
+    ports:
+      - "4016:4016" # specify port forewarding
+    container_name: platform-container
+    depends_on:
+      - mongo
+    restart: always
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - '/usr/src/app/data:/data/db'
+    ports:
+      - "27016:27017"
