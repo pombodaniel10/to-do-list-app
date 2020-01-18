@@ -4,10 +4,17 @@ const router = express.Router();
 const Task = require('../models/task');
 
 router.post('/add',(req,res) => {
+    let status;
+    if(req.body.assignedTo!="None"){ 
+        status = "In-Progress";
+    }else{
+        status = "Open";
+    }
+    
     let newTask = new Task({
         name: req.body.name,
         description: req.body.description,
-        status: req.body.status,
+        status: status,
         assignedTo: req.body.assignedTo
     });
     Task.addTask(newTask,(err,task) =>{
@@ -71,7 +78,5 @@ router.delete('/delete/:id',(req,res)=>{
         }
     });
   });
-
-
 
 module.exports = router;
