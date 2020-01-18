@@ -4,6 +4,8 @@ import { ApiService } from '../services/api.service';
 import { Task } from '../interfaces/task';
 import { User } from '../interfaces/user';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {AddUserDialog} from '../users-list/users-list.component';
+import {Router} from '@angular/router';
 
 export interface DialogData {
   task: Task;
@@ -25,9 +27,11 @@ export class HomeComponent implements OnInit {
   completed: Task[] = [];
   archived: Task[] = [];
   task: Task;
-  selected: string
+  selected: string;
+  name: string;
+  user:User;
 
-  constructor(public api: ApiService,public dialog: MatDialog) { }
+  constructor(public api: ApiService,public dialog: MatDialog,private router:Router) { }
 
   openDialog(event: CdkDragDrop<Task[]>): void {
     const dialogRef = this.dialog.open(SelectUserDialog, {
@@ -47,6 +51,28 @@ export class HomeComponent implements OnInit {
           this.task.assignedTo = this.selected;
           this.updateStatus(event.container.id,this.task);
       }
+    });
+  }
+
+  addUser(): void {
+    this.getUsers();
+    const dialogRef = this.dialog.open(AddUserDialog, {
+      height: '200px',
+      width: '600px',
+      data: {name: this.name}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.name = result;
+      this.user = {name:this.name};
+      this.api.addUser(this.user)
+        .subscribe(res => {
+          this.router.navigateByUrl('', {skipLocationChange: true})
+            .then(() => this.router.navigate(['/']));
+        }, err => {
+          console.log(err);
+        });
     });
   }
 
