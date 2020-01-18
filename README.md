@@ -100,10 +100,10 @@ $ npm run start
 
 ```javascript
 {
-	name: string,
-	description: string,
-	assignedTo: string,
-	status: string,
+	name: String,
+	description: String,
+	assignedTo: String,
+	status: String,
 	date: Date
 }
 ``` 
@@ -111,32 +111,50 @@ $ npm run start
 ##### Add a task
 
 ```http
-- POST /tasks/add
+POST /tasks/add
 ```
 
 ##### Edit a task by id
 
 ```http
-- PUT /tasks/edit/:id
+PUT /tasks/edit/:id
 ```
 
 ##### Get a task by id
 
 ```http
-- GET /tasks/:id
+GET /tasks/:id
 ```
 
 ##### Get all tasks
 
 ```http
-- GET /tasks/getAll
+GET /tasks/getAll
 ```
 
 ##### Delete a task by id
 
 ```http
-- DELETE /tasks/delete/:id
+DELETE /tasks/delete/:id
 ```
 
-  
-## Web Client
+##### User Schema
+
+```javascript
+{
+	name: String,
+	assignedTasks: String[],
+}
+``` 
+
+##### Add a user
+
+```http
+POST /users/add/
+```
+
+##### Get all users
+
+```http
+GET /users/getAll/
+```
