@@ -12,22 +12,22 @@
 ## General info
 Tasks Manager is a WebApp to create,edit and delete tasks, you can set different task status and assign task to a user. This project was developed using the MEAN stack.
 
-##Features
+## Features
 
-*Create Task
+* Create Task
     ![Add Task](./images/add-task.png)
-*Edit Task
+* Edit Task
     ![Edit Task](./images/edit-task.png)
-*Tasks List
+* Tasks List
     ![Tasks List](./images/task-list.png)
-*Filter a Task of the list
-*Add User
+* Filter a Task of the list
+* Add User
     ![Add user](./images/add-user.png)
-*Assign a Task to a User
-*Remove a User from a Task
-*User List
+* Assign a Task to a User
+* Remove a User from a Task
+* User List
     ![Users List](./images/user-list.png)
-*Change status in a Task(Open,In-Progress,Completed,Archived)
+* Change status in a Task(Open,In-Progress,Completed,Archived)
 
 ## Technologies
 Project is created with:
