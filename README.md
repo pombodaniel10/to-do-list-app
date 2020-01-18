@@ -16,7 +16,7 @@
 
 *  [Setup](#setup)
 
-*  [Server](#server)
+*  [Server Documentation](#server)
 
 *  [Web Client](#webclient)
 
@@ -30,7 +30,6 @@ Tasks Manager is a WebApp to create,edit and delete tasks, you can set different
 
 ## Features
 
-  
 
 * Create Task
 
@@ -138,6 +137,8 @@ GET /tasks/getAll
 DELETE /tasks/delete/:id
 ```
 
+### Users API
+
 ##### User Schema
 
 ```javascript
@@ -158,3 +159,9 @@ POST /users/add/
 ```http
 GET /users/getAll/
 ```
+
+## Web Client
+
+* Angular Framework for Client Web.
+* Angular Material Components.
+* Bootswatch's Flatly Bootstrap theme.
