@@ -20,7 +20,7 @@ export class UsersListComponent implements OnInit {
   users: User[];
   name: string;
   user:User;
-  displayedColumns: string[] = ['name', 'assignedtasks','actions'];
+  displayedColumns: string[] = ['name','assignedTasks'];
   dataSource;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;

@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
           event.previousIndex,
           event.currentIndex);
           this.task.assignedTo = this.selected;
+          this.updateStatus(event.container.id,this.task);
       }
     });
   }
@@ -107,7 +108,6 @@ export class HomeComponent implements OnInit {
     switch(containerId){
       case 'cdk-drop-list-0':{
         editedTask.status = "Open";
-        editedTask.assignedTo = "None"
         this.updateTask(editedTask._id,editedTask);
         break;
       }

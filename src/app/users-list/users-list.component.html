@@ -23,17 +23,9 @@
           <td mat-cell *matCellDef="let user"> {{user.name}} </td>
         </ng-container>
   
-        <ng-container matColumnDef="assignedtasks">
+        <ng-container matColumnDef="assignedTasks">
           <th mat-header-cell *matHeaderCellDef> Assigned Tasks </th>
-          <td mat-cell *matCellDef="let user"> {{user.assignedTask}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Actions </th>
-            <td mat-cell *matCellDef="let user">
-              <button type="button" class="btn btn-primary btn-sm" >Edit</button> 
-              <button type="button" class="btn btn-primary btn-sm" style="position: relative; right: -10px;" >Delete</button> 
-            </td>
+          <td mat-cell *matCellDef="let user">{{user.assignedTasks}}</td>
         </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
