@@ -2,11 +2,26 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
+const User = require('../models/user');
+
 
 router.post('/add',(req,res) => {
     let status;
     if(req.body.assignedTo!="None"){ 
         status = "In-Progress";
+        User.findUserbyName(req.body.assignedTo,(err,user)=>{
+            if(err){
+                console.log(err);
+            }else{
+                User.updateOne({_id:user._id},{$push: {"assignedTasks": req.body.name}}, (err,callback) =>{
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log(callback);
+                    }
+                });
+            }
+        });
     }else{
         status = "Open";
     }
@@ -34,6 +49,36 @@ router.put('/edit/:id',(req,res) => {
         status: req.body.status,
         assignedTo: req.body.assignedTo
     };
+    if(editTask.status=="In-Progress"||editTask.status=="Completed"){
+        User.findUserbyName(req.body.assignedTo,(err,user)=>{
+            if(err){
+                console.log(err);
+            }else{
+                User.updateOne({_id:user._id},{$push: {"assignedTasks": req.body.name}}, (err,callback) =>{
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log(callback);
+                    }
+                });
+            }
+        });
+    }else if(editTask.status=="Open"){
+        User.findUserbyName(req.body.assignedTo,(err,user)=>{
+            if(err){
+                console.log(err);
+            }else{
+                User.updateOne({_id:user._id},{$pull: {"assignedTasks": req.body.name}}, (err,callback) =>{
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log(callback);
+                    }
+                });
+            }
+        });
+        editTask.assignedTo = "None";
+    }
     Task.editTask(req.params.id,editTask,(err,task) =>{
         if(err){
             console.log(err);
