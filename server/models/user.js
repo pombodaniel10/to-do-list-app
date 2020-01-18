@@ -15,3 +15,7 @@ const User = module.exports = mongoose.model('User',UserSchema);
 module.exports.addUser = function(newUser,callback){
     newUser.save(callback);
 }
+
+module.exports.findUserbyName = function(name,callback){
+    User.findOne({name:name},callback);
+}
