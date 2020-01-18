@@ -18,6 +18,11 @@ const TaskSchema = new mongoose.Schema({
       type: String,
       required: true,
       default: 'None'
+  },
+  date: {
+    type: Date,
+    required: true,
+    default: Date.now()
   }
 });
 
