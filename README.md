@@ -1,6 +1,6 @@
-## Tasks Manager
+# Tasks Manager
 
-![Main page](./images/main-page.png)
+![Change status](./images/change-status.gif)
 
 ## Table of contents
 
@@ -29,27 +29,19 @@ Tasks Manager is a WebApp to create,edit and delete tasks, you can set different
 ![Add Task](./images/add-task.png)
 ![Edit Task](./images/edit-task.png)
 
+* Tasks List
 * Filter a Task of the list
-
-* Add User
-
-![Add user](./images/add-user.png)
+![Tasks List](./images/task-list.gif)
 
 * Assign a Task to a User
-
 * Remove a User from a Task
-
 * Change status in a Task(Open,In-Progress,Completed,Archived)
 
 ![Change status](./images/change-status.gif)
 
-* Tasks List
-
-![Tasks List](./images/task-list.png)
-
-* User List
-
-![Users List](./images/user-list.png)
+* Add User
+* Users List
+![Users List](./images/users-list.gif)
 
 
 
