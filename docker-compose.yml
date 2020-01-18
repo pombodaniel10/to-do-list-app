@@ -8,12 +8,12 @@ services:
       - "4016:4016" # specify port forewarding
     container_name: server
     depends_on:
-      - mongoDB
+      - mongodb
     restart: always
     links:
-      - mongoDB
-  mongoDB:
-    container_name: mongoDB
+      - mongodb
+  mongodb:
+    container_name: mongodb
     image: mongo
     volumes:
       - '/usr/src/app/data:/data/db'
