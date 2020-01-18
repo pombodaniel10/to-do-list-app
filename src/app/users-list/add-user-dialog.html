@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+    <h3 mat-dialog-title>Add User</h3>
+</div>
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Name" [(ngModel)]="data.name">
+</mat-form-field>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Add user</button>
+</div>

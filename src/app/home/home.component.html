@@ -1,0 +1,78 @@
+<div class="container text-left">
+    <h1>Tasks</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 text-left">
+            <p class="lead">You can move the tasks into a different status.</p>
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-4 text-right">
+            <button type="button" routerLink="add-task" class="btn btn-primary">Add task</button>
+        </div>
+    </div>
+</div>
+<div class="container text-center">
+    <hr>
+    <div class="row">
+        <div class="col-sm-3">
+            <div cdkDropListGroup>
+                <div class="example-container">
+                    <h2>Open</h2>                  
+                    <div
+                        cdkDropList
+                        #openList="cdkDropList"
+                        [cdkDropListConnectedTo]="[inProgressList,completedList,archivedList]" 
+                        [cdkDropListData]="open"
+                        class="example-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of open" [cdkDragData]="item" cdkDrag>{{item.name}}</div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="col-sm-3">
+            <div class="example-container">
+                      <h2>In-Progress</h2>           
+                      <div
+                        cdkDropList
+                        #inProgressList="cdkDropList"
+                        [cdkDropListConnectedTo]="[openList,completedList,archivedList]" 
+                        [cdkDropListData]="inProgress"
+                        class="example-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of inProgress" [cdkDragData]="item" cdkDrag>{{item.name}}</div>
+                      </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="example-container">
+                    <h2>Completed</h2>                  
+                    <div
+                        cdkDropList
+                        #completedList="cdkDropList"
+                        [cdkDropListConnectedTo]="[openList,inProgressList,archivedList]" 
+                        [cdkDropListData]="completed"
+                        class="example-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of completed" [cdkDragData]="item" cdkDrag>{{item.name}}</div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="example-container">
+                    <h2>Archived</h2>                  
+                    <div
+                        cdkDropList
+                        #archivedList="cdkDropList"
+                        [cdkDropListConnectedTo]="[openList,inProgressList,completedList]" 
+                        [cdkDropListData]="archived"
+                        class="example-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of archived" [cdkDragData]="item" cdkDrag>{{item.name}}</div>
+                    </div>
+            </div>
+        </div>
+  </div>
+</div>
