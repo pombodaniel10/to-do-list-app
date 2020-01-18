@@ -39,6 +39,10 @@ Tasks Manager is a WebApp to create,edit and delete tasks, you can set different
 
 * Remove a User from a Task
 
+* Change status in a Task(Open,In-Progress,Completed,Archived)
+
+![Change status](./images/change-status.png)
+
 * Tasks List
 
 ![Tasks List](./images/task-list.png)
@@ -47,7 +51,7 @@ Tasks Manager is a WebApp to create,edit and delete tasks, you can set different
 
 ![Users List](./images/user-list.png)
 
-* Change status in a Task(Open,In-Progress,Completed,Archived)
+
 
   
 
@@ -83,7 +87,7 @@ $ npm run start
 
 ### Docker Install 
 
-Modify the .env file to ```MONGO_HOST=mongodb://mongo:27017/tasks-manager```
+Modify the 'MONGO HOST' into the .env file to ```MONGO_HOST=mongodb://mongo:27017/tasks-manager```
 
 ```
 $ git clone https://github.com/pombodaniel10/tasks-manager
