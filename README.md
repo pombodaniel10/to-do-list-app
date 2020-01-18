@@ -41,7 +41,7 @@ Tasks Manager is a WebApp to create,edit and delete tasks, you can set different
 
 * Change status in a Task(Open,In-Progress,Completed,Archived)
 
-![Change status](./images/change-status.png)
+![Change status](./images/change-status.gif)
 
 * Tasks List
 
