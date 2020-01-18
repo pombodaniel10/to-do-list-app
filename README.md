@@ -1,6 +1,6 @@
 ## To-Do List Manager
 
-![Main page](./images/main-page.jpg)
+![Main page](./images/main-page.png)
 
 ## Table of contents
 * [General info](#general-info)
