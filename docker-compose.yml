@@ -8,12 +8,12 @@ services:
       - "4016:4016" # specify port forewarding
     container_name: platform-container
     depends_on:
-      - mongo
+      - mongoDB
     restart: always
     links:
-      - mongo
-  mongo:
-    container_name: mongo
+      - mongoDB
+  mongoDB:
+    container_name: mongoDB
     image: mongo
     volumes:
       - '/usr/src/app/data:/data/db'
