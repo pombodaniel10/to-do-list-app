@@ -20,10 +20,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TasksListComponent,DeleteDialog } from './tasks-list/tasks-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { UsersListComponent,AddUserDialog } from './users-list/users-list.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 import {ApiService} from './services/api.service';
-import { TaskComponent } from './task/task.component';
-import { EditTaskComponent } from './edit-task/edit-task.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     SelectUserDialog,
     DeleteDialog,
     AddUserDialog,
-    TaskComponent,
     EditTaskComponent
   ],
   entryComponents: [SelectUserDialog,DeleteDialog,AddUserDialog],
