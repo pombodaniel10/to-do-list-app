@@ -19,7 +19,7 @@ import { HomeComponent,SelectUserDialog } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TasksListComponent,DeleteDialog } from './tasks-list/tasks-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
-import { UsersListComponent,AddUserDialog } from './users-list/users-list.component';
+import { UsersListComponent,AddUserDialog,DeleteUserDialog } from './users-list/users-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 
 import {ApiService} from './services/api.service';
@@ -36,9 +36,10 @@ import {ApiService} from './services/api.service';
     SelectUserDialog,
     DeleteDialog,
     AddUserDialog,
-    EditTaskComponent
+    EditTaskComponent,
+    DeleteUserDialog
   ],
-  entryComponents: [SelectUserDialog,DeleteDialog,AddUserDialog],
+  entryComponents: [SelectUserDialog,DeleteDialog,AddUserDialog,DeleteUserDialog],
   imports: [
     BrowserModule,
     AppRoutingModule,

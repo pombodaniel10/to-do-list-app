@@ -24,7 +24,7 @@ export class UsersListComponent implements OnInit {
   users: User[];
   name: string;
   user:User;
-  displayedColumns: string[] = ['name','assignedTasks'];
+  displayedColumns: string[] = ['name','assignedTasks','actions'];
   dataSource;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -41,8 +41,8 @@ export class UsersListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.name = result;
-      this.user = {name:this.name};
-      this.api.addUser(this.user)
+      let user = {name:this.name};
+      this.api.addUser(user)
         .subscribe(res => {
           this.router.navigateByUrl('/', {skipLocationChange: true})
             .then(() => this.router.navigate(['/users-list']));
@@ -65,6 +65,8 @@ export class UsersListComponent implements OnInit {
         this.api.deleteUser(result)
           .subscribe(res =>{
             console.log(res);
+            this.router.navigateByUrl('/', {skipLocationChange: true})
+            .then(() => this.router.navigate(['/users-list']));
           }, err => {
             console.log(err);
         });

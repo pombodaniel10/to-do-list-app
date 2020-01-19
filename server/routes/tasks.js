@@ -67,7 +67,7 @@ router.put('/edit/:id',(req,res) => {
         User.findUserbyName(req.body.assignedTo,(err,user)=>{
             if(err){
                 console.log(err);
-            }else{
+            }else if(user!=null){
                 User.updateOne({_id:user._id},{$pull: {"assignedTasks": req.body.name}}, (err,callback) =>{
                     if(err){
                         console.log(err);

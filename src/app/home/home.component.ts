@@ -65,8 +65,8 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.name = result;
-      this.user = {name:this.name};
-      this.api.addUser(this.user)
+      let user = {name:this.name};
+      this.api.addUser(user)
         .subscribe(res => {
           location.reload();
         }, err => {
