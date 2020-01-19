@@ -26,23 +26,23 @@ Tasks Manager is a Responsive WebApp to create,edit and delete tasks, you can se
 
 ## Features
 
-* Create/Edit Task
+* **Create/Edit Task**
 
 ![Add Task](./images/add-task.png)
 ![Edit Task](./images/edit-task.png)
 
-* Tasks List
-* Filter a Task of the list
+* **Tasks List**
+* **Filter a Task of the list**
 ![Tasks List](./images/task-list.gif)
 
-* Assign a Task to a User
-* Remove a User from a Task
-* Change status in a Task(Open,In-Progress,Completed,Archived)
+* **Assign a Task to a User**
+* **Remove a User from a Task**
+* **Change status in a Task(Open,In-Progress,Completed,Archived)**
 
 ![Change status](./images/change-status.gif)
 
-* Add User
-* Users List
+* **Add User**
+* **Users List**
 ![Users List](./images/users-list.gif)
 
 
@@ -99,7 +99,7 @@ $ docker-compose up -d
 
 ## Server
 
-### Tasks API
+### **Tasks API**
 
 ##### Task Schema
 
@@ -113,31 +113,81 @@ $ docker-compose up -d
 }
 ``` 
 
-##### Add a task
+##### **Add a task**
+
+*  **URL Params**
+	
+	None
+
+* **Data Params**
+
+	**Required:**
+	`name: string`
+	`description: string`
+
+	**Optional:**
+
+	`assignedTo: string`
 
 ```http
 POST /tasks/add
 ```
 
-##### Edit a task by id
+##### **Edit a task by id**
+
+*  **URL Params**
+
+	`id: string`
+
+* **Data Params**
+
+	**Required:**
+	`name: string`
+	`description: string`
+	`assignedTo: string`
+	`status: string`
 
 ```http
 PUT /tasks/edit/:id
 ```
 
-##### Get a task by id
+##### **Get a task by id**
+
+*  **URL Params**
+
+	`id: string`
+
+* **Data Params**
+
+	None
 
 ```http
 GET /tasks/:id
 ```
 
-##### Get all tasks
+##### **Get all tasks**
+
+*  **URL Params**
+
+	None
+
+* **Data Params**
+
+	None
 
 ```http
 GET /tasks/getAll
 ```
 
-##### Delete a task by id
+##### **Delete a task by id**
+
+*  **URL Params**
+
+	`id: string`
+
+* **Data Params**
+
+	None
 
 ```http
 DELETE /tasks/delete/:id
@@ -145,7 +195,7 @@ DELETE /tasks/delete/:id
 
 ### Users API
 
-##### User Schema
+##### **User Schema**
 
 ```javascript
 {
@@ -154,13 +204,43 @@ DELETE /tasks/delete/:id
 }
 ``` 
 
-##### Add a user
+##### **Add a user**
+
+*  **URL Params**
+
+	None
+
+* **Data Params**
+
+	`name: string`
 
 ```http
 POST /users/add/
 ```
 
-##### Get all users
+##### **Delete a user by id**
+
+*  **URL Params**
+
+	`id: string`
+
+* **Data Params**
+
+	None
+
+```http
+DELETE /users/delete/:id
+```
+
+##### **Get all users**
+
+*  **URL Params**
+
+	None
+
+* **Data Params**
+
+	None
 
 ```http
 GET /users/getAll/
