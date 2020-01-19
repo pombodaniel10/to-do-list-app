@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+    <h3 mat-dialog-title>Are you sure to delete the user <strong>{{data.user.name}}</strong>? (If the user is assigned to a task. To remove it, move the task to Open Tasks.)</h3>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button class="btn btn-danger" [mat-dialog-close]="data.user._id" cdkFocusInitial>Delete</button>
+</div>

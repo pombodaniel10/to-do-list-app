@@ -10,6 +10,10 @@ export interface DialogData {
   name: String;
 }
 
+export interface UserData{
+  user: User
+}
+
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
@@ -48,6 +52,26 @@ export class UsersListComponent implements OnInit {
     });
   }
 
+  deleteUser(user): void {
+    const dialogRef = this.dialog.open(DeleteUserDialog, {
+      height: '200px',
+      width: '600px',
+      data: {user: user}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if(result!=null){
+        this.api.deleteUser(result)
+          .subscribe(res =>{
+            console.log(res);
+          }, err => {
+            console.log(err);
+        });
+      }
+    });
+  }
+
   async getUsers() {
     await this.api.getAllUsers()
    .subscribe(res => {
@@ -78,6 +102,21 @@ export class AddUserDialog {
   constructor(
     public dialogRef: MatDialogRef<AddUserDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+
+@Component({
+  selector: 'delete-user-dialog',
+  templateUrl:'delete-user-dialog.html',
+})
+export class DeleteUserDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<DeleteUserDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: UserData) {}
 
   onNoClick(): void {
     this.dialogRef.close();
