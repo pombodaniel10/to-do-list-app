@@ -22,7 +22,7 @@
 
 ## General info
 
-Tasks Manager is a WebApp to create,edit and delete tasks, you can set different task status and assign task to a user. This project was developed using the MEAN stack.
+Tasks Manager is a Responsive WebApp to create,edit and delete tasks, you can set different task status and assign task to a user. This project was developed using the MEAN stack.
 
 ## Features
 
