@@ -12,4 +12,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  isCollapse = true; 
+  toggleState() { 
+    let foo = this.isCollapse;
+    this.isCollapse = foo === false ? true : false; 
+  }
+
 }
