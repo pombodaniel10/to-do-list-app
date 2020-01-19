@@ -17,6 +17,17 @@ router.post('/add',(req,res) => {
     
 });
 
+router.delete('/delete/:id',(req,res)=>{
+    User.deleteUser(req.params.id,(err,user) => {
+        if(err){
+            res.json({"success":false, "msg":'Error while trying to delete the user.'});
+        }
+        if(user){
+            res.json({"success":true, "msg":'User deleted.'});
+        }
+    });
+});
+
 router.get('/getAll', (req,res) => {
     User.find((err,users) => {
         if(err) throw err;

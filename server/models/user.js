@@ -19,3 +19,7 @@ module.exports.addUser = function(newUser,callback){
 module.exports.findUserbyName = function(name,callback){
     User.findOne({name:name},callback);
 }
+
+module.exports.deleteUser = function(id,callback){
+    User.deleteOne({"_id":id},callback);
+}
