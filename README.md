@@ -22,7 +22,7 @@
 
 ## General info
 
-Tasks Manager is a Responsive WebApp to create,edit and delete tasks, you can set different task status and assign task to a user. This project was developed using the MEAN stack.
+Tasks Manager is a Responsive WebApp to create,edit and delete tasks, you can set different task status and assign task to a user. This project was developed using the MEAN stack. The server was deployed to a private vps using Docker.
 
 ## Features
 
@@ -114,7 +114,7 @@ $ docker-compose up -d
 ``` 
 
 ### **Add a task**
-
+----
 *  **URL Params**
 	
 	None
@@ -134,7 +134,7 @@ POST /tasks/add
 ```
 
 ### **Edit a task by id**
-
+----
 *  **URL Params**
 
 	`id: string`
@@ -152,7 +152,7 @@ PUT /tasks/edit/:id
 ```
 
 ### **Get a task by id**
-
+----
 *  **URL Params**
 
 	`id: string`
@@ -166,7 +166,7 @@ GET /tasks/:id
 ```
 
 ### **Get all tasks**
-
+----
 *  **URL Params**
 
 	None
@@ -180,7 +180,7 @@ GET /tasks/getAll
 ```
 
 ### **Delete a task by id**
-
+----
 *  **URL Params**
 
 	`id: string`
@@ -205,7 +205,7 @@ DELETE /tasks/delete/:id
 ``` 
 
 ### **Add a user**
-
+----
 *  **URL Params**
 
 	None
@@ -219,7 +219,7 @@ POST /users/add/
 ```
 
 ### **Delete a user by id**
-
+----
 *  **URL Params**
 
 	`id: string`
@@ -233,7 +233,7 @@ DELETE /users/delete/:id
 ```
 
 ### **Get all users**
-
+----
 *  **URL Params**
 
 	None
