@@ -99,9 +99,9 @@ $ docker-compose up -d
 
 ## Server
 
-### **Tasks API**
+## **Tasks API**
 
-##### Task Schema
+### Task Schema
 
 ```javascript
 {
@@ -113,7 +113,7 @@ $ docker-compose up -d
 }
 ``` 
 
-##### **Add a task**
+### **Add a task**
 
 *  **URL Params**
 	
@@ -133,7 +133,7 @@ $ docker-compose up -d
 POST /tasks/add
 ```
 
-##### **Edit a task by id**
+### **Edit a task by id**
 
 *  **URL Params**
 
@@ -151,7 +151,7 @@ POST /tasks/add
 PUT /tasks/edit/:id
 ```
 
-##### **Get a task by id**
+### **Get a task by id**
 
 *  **URL Params**
 
@@ -165,7 +165,7 @@ PUT /tasks/edit/:id
 GET /tasks/:id
 ```
 
-##### **Get all tasks**
+### **Get all tasks**
 
 *  **URL Params**
 
@@ -179,7 +179,7 @@ GET /tasks/:id
 GET /tasks/getAll
 ```
 
-##### **Delete a task by id**
+### **Delete a task by id**
 
 *  **URL Params**
 
@@ -193,9 +193,9 @@ GET /tasks/getAll
 DELETE /tasks/delete/:id
 ```
 
-### Users API
+## Users API
 
-##### **User Schema**
+### **User Schema**
 
 ```javascript
 {
@@ -204,7 +204,7 @@ DELETE /tasks/delete/:id
 }
 ``` 
 
-##### **Add a user**
+### **Add a user**
 
 *  **URL Params**
 
@@ -218,7 +218,7 @@ DELETE /tasks/delete/:id
 POST /users/add/
 ```
 
-##### **Delete a user by id**
+### **Delete a user by id**
 
 *  **URL Params**
 
@@ -232,7 +232,7 @@ POST /users/add/
 DELETE /users/delete/:id
 ```
 
-##### **Get all users**
+### **Get all users**
 
 *  **URL Params**
 
