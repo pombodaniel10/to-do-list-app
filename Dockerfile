@@ -19,7 +19,7 @@ COPY . /usr/src/app
 # Expose the port the app runs in
 EXPOSE 4016
 
-RUN npm run build
+RUN npm run buildProd
 
 # Serve the app
 CMD ["node", "server"]
